@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>コンセプト｜プラウド川崎矢向 売却情報</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;500;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:       #0a1e35;
+      --navy-mid:   #1a3a5c;
+      --gold:       #9e7e2c;
+      --gold-light: #c4a23e;
+      --gold-pale:  #e8d080;
+      --text:       #1a1a1a;
+      --text-mid:   #555;
+      --text-light: #888;
+      --border:     #d4ccbc;
+      --bg:         #f7f5f1;
+      --white:      #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      font-weight: 300;
+    }
+    h1, h2, h3 {
+      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
+    }
+
+    /* ─── HEADER ─── */
+    header {
+      background: var(--navy);
+      color: var(--white);
+      padding: 0 32px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+    }
+    .hd-brand {
+      font-family: 'EB Garamond', serif;
+      font-size: 16px;
+      letter-spacing: 3px;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .hd-sep { width: 1px; height: 24px; background: rgba(255,255,255,0.2); }
+    .hd-sub { font-size: 10px; letter-spacing: 2px; color: var(--gold-light); text-transform: uppercase; }
+    .hd-nav { display: flex; align-items: center; gap: 0; margin-left: auto; }
+    .hd-nav a {
+      font-size: 12px; letter-spacing: 1px;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      padding: 0 16px; height: 56px;
+      display: flex; align-items: center;
+      border-left: 1px solid rgba(255,255,255,0.08);
+      transition: color 0.2s;
+    }
+    .hd-nav a:hover, .hd-nav a.active { color: var(--white); }
+    .hd-nav .hd-cta {
+      background: var(--gold); color: var(--white);
+      border-left: none; padding: 0 24px;
+      font-weight: 500;
+    }
+    .hd-nav .hd-cta:hover { background: var(--gold-light); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 88vh;
+      background: var(--navy);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 100px 32px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(135deg, rgba(158,126,44,0.06) 0%, transparent 50%),
+        linear-gradient(225deg, rgba(100,140,180,0.06) 0%, transparent 50%);
+    }
+    /* 装飾ライン */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%; transform: translateX(-50%);
+      width: 1px; height: 60px;
+      background: linear-gradient(to bottom, transparent, var(--gold));
+    }
+    .hero-eyebrow {
+      font-family: 'EB Garamond', serif;
+      font-size: 11px; letter-spacing: 6px;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      position: relative;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: ''; display: block;
+      width: 40px; height: 1px;
+      background: var(--gold);
+      opacity: 0.6;
+    }
+    .hero h1 {
+      font-size: clamp(24px, 3.5vw, 42px);
+      color: rgba(255,255,255,0.9);
+      line-height: 1.9;
+      letter-spacing: 0.12em;
+      font-weight: 400;
+      margin-bottom: 8px;
+      position: relative;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold-pale);
+      font-weight: 700;
+    }
+    .hero-rule {
+      width: 40px; height: 1px;
+      background: var(--gold);
+      margin: 32px auto;
+    }
+    .hero p {
+      font-size: 13px; line-height: 2.4;
+      color: rgba(255,255,255,0.5);
+      max-width: 480px;
+      letter-spacing: 0.5px;
+      position: relative;
+    }
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px; left: 50%; transform: translateX(-50%);
+      font-size: 9px; letter-spacing: 4px;
+      color: rgba(255,255,255,0.3);
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+    }
+    .hero-scroll::after {
+      content: '';
+      display: block;
+      width: 1px; height: 40px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+      animation: scrollLine 2s infinite;
+    }
+    @keyframes scrollLine {
+      0%   { transform: scaleY(0); transform-origin: top; }
+      50%  { transform: scaleY(1); transform-origin: top; }
+      51%  { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
+    }
+
+    /* ─── SECTION BASE ─── */
+    .section-wrap { padding: 80px 32px; }
+    .section-wrap.dark {
+      background: var(--navy);
+    }
+    .section-wrap.light { background: var(--bg); }
+    .section-inner { max-width: 900px; margin: 0 auto; }
+    .sec-eyebrow {
+      font-family: 'EB Garamond', serif;
+      font-size: 10px; letter-spacing: 5px;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 10px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .sec-eyebrow::before {
+      content: ''; display: block;
+      width: 24px; height: 1px;
+      background: var(--gold);
+    }
+    .section-wrap.dark .sec-eyebrow { color: var(--gold-light); }
+    .section-wrap.dark .sec-eyebrow::before { background: var(--gold-light); }
+    .sec-h2 {
+      font-size: clamp(20px, 2.8vw, 32px);
+      font-weight: 700; line-height: 1.5;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+    }
+    .section-wrap.dark .sec-h2 { color: var(--white); }
+    .sec-lead {
+      font-size: 13px; color: var(--text-mid);
+      line-height: 2.2; margin-bottom: 48px;
+    }
+    .section-wrap.dark .sec-lead { color: rgba(255,255,255,0.5); }
+
+    /* ─── PLANNING ─── */
+    .stat-row {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border);
+      margin-bottom: 48px;
+    }
+    .stat-cell {
+      background: var(--white);
+      padding: 36px 24px;
+      text-align: center;
+    }
+    .stat-num {
+      font-family: 'EB Garamond', serif;
+      font-size: 52px; line-height: 1;
+      color: var(--navy); margin-bottom: 4px;
+    }
+    .stat-num sup { font-size: 22px; }
+    .stat-unit { font-size: 10px; letter-spacing: 2px; color: var(--gold); margin-bottom: 10px; }
+    .stat-desc { font-size: 12px; color: var(--text-mid); line-height: 1.7; }
+
+    .feat-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .feat-cell {
+      background: var(--white);
+      padding: 20px 22px;
+      display: flex; align-items: flex-start; gap: 14px;
+    }
+    .feat-cell::before {
+      content: '';
+      display: block;
+      width: 4px; height: 4px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+    .feat-cell p { font-size: 13px; line-height: 1.8; color: var(--text-mid); }
+    .feat-cell strong { color: var(--navy); display: block; font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+
+    /* ─── POSITION ─── */
+    .ac-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 1px;
+    }
+    .ac-cell {
+      background: rgba(255,255,255,0.04);
+      padding: 24px 22px;
+    }
+    .ac-type {
+      font-size: 9px; letter-spacing: 3px;
+      color: var(--gold-light); text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .ac-station { font-size: 14px; color: rgba(255,255,255,0.8); margin-bottom: 6px; }
+    .ac-time {
+      font-family: 'EB Garamond', serif;
+      font-size: 36px; color: var(--gold-pale); line-height: 1;
+    }
+    .ac-time span { font-size: 13px; font-family: 'Noto Sans JP', sans-serif; color: rgba(255,255,255,0.4); }
+    .ac-note { font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 4px; }
+
+    .shop-tbl {
+      width: 100%; border-collapse: collapse;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .shop-tbl tr { border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .shop-tbl tr:last-child { border-bottom: none; }
+    .shop-tbl td { padding: 12px 16px; font-size: 12px; }
+    .shop-tbl .s-cat { color: var(--gold-light); letter-spacing: 2px; font-size: 9px; width: 80px; }
+    .shop-tbl .s-name { color: rgba(255,255,255,0.7); }
+    .shop-tbl .s-dist { color: rgba(255,255,255,0.35); text-align: right; }
+
+    /* ─── QUALITY ─── */
+    .q-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .q-cell { background: var(--white); }
+    .q-cell-hd {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .q-cell-hd .q-icon {
+      width: 32px; height: 32px;
+      background: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; flex-shrink: 0;
+    }
+    .q-cell-hd .q-title { font-size: 12px; font-weight: 700; color: var(--navy); letter-spacing: 1px; }
+    .q-cell-body { padding: 16px 18px; }
+    .q-cell-body p { font-size: 12px; color: var(--text-mid); line-height: 1.9; }
+
+    /* ─── CTA ─── */
+    .cta-wrap {
+      background: var(--navy);
+      padding: 80px 32px;
+      text-align: center;
+    }
+    .cta-wrap .c-rule {
+      width: 40px; height: 1px;
+      background: var(--gold);
+      margin: 0 auto 32px;
+    }
+    .cta-wrap h2 {
+      font-size: clamp(18px, 2.5vw, 28px);
+      color: var(--white);
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+    }
+    .cta-wrap p { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 2; margin-bottom: 40px; }
+    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .cta-a {
+      font-size: 12px; letter-spacing: 2px;
+      padding: 15px 40px;
+      text-decoration: none; font-weight: 500;
+      transition: opacity 0.2s;
+    }
+    .cta-a:hover { opacity: 0.8; }
+    .cta-primary { background: var(--white); color: var(--navy); }
+    .cta-gold    { background: var(--gold); color: var(--white); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #060f1a;
+      color: rgba(255,255,255,0.25);
+      text-align: center;
+      padding: 32px;
+      font-size: 10px;
+      letter-spacing: 1px; line-height: 2.4;
+    }
+    footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
+
+    @media (max-width: 640px) {
+      .stat-row { grid-template-columns: 1fr; }
+      .feat-grid { grid-template-columns: 1fr; }
+      .ac-grid   { grid-template-columns: 1fr; }
+      .q-grid    { grid-template-columns: 1fr; }
+      .cta-btns  { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="hd-brand">Proud Kawasaki Yako</a>
+  <div class="hd-sep"></div>
+  <span class="hd-sub">Concept</span>
+  <nav class="hd-nav">
+    <a href="index.html">物件情報</a>
+    <a href="concept.html" class="active">コンセプト</a>
+    <a href="index.html#contact" class="hd-cta">問い合わせ</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Concept</div>
+  <h1>
+    求めたのは、<br>
+    住まいに本来あるべき<br>
+    <em>「ゆとり」</em>の創造。
+  </h1>
+  <div class="hero-rule"></div>
+  <p>住空間、建物、そして立地における「ゆとり」を追求し、<br>本質的な暮らしやすさを実現した邸宅がここにある。</p>
+  <div class="hero-scroll">SCROLL</div>
+</section>
+
+<!-- PLANNING -->
+<div class="section-wrap light">
+  <div class="section-inner">
+    <div class="sec-eyebrow">Planning</div>
+    <h2 class="sec-h2">住まう「ゆとり」</h2>
+    <p class="sec-lead">
+      首都圏の新築マンションが平均65㎡台へと狭小化する時代に、プラウド川崎矢向は逆行する。<br>
+      平均専有面積70㎡超・LD天井高2.5mを全戸標準装備。数字の豊かさを、暮らしの豊かさへと直結させた設計思想。
+    </p>
+
+    <div class="stat-row">
+      <div class="stat-cell">
+        <div class="stat-num">70<sup>㎡</sup></div>
+        <div class="stat-unit">平均専有面積</div>
+        <div class="stat-desc">首都圏平均比<br>+約5㎡のゆとり</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">2.5<sup>m</sup></div>
+        <div class="stat-unit">LD天井高</div>
+        <div class="stat-desc">全戸標準装備<br>開放感ある空間</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">86<sup>㎡</sup></div>
+        <div class="stat-unit">本物件専有面積</div>
+        <div class="stat-desc">4LDK ＋ 約40㎡<br>ルーフバルコニー</div>
+      </div>
+    </div>
+
+    <div class="feat-grid">
+      <div class="feat-cell">
+        <div>
+          <strong>4LDK ＋ 約40㎡ ルーフバルコニー</strong>
+          <p>ガーデニングや小さなお子様の遊び場として活用できる希少な専用屋外スペース。</p>
+        </div>
+      </div>
+      <div class="feat-cell">
+        <div>
+          <strong>WIC×2・ファミクロ・納戸</strong>
+          <p>収納が充実している家は、暮らしが整う。片付けに困らない設計。</p>
+        </div>
+      </div>
+      <div class="feat-cell">
+        <div>
+          <strong>ぬく森ハウス＆中庭</strong>
+          <p>リモートワークや家族の談笑に最適な共用スペースと広々とした中庭を完備。</p>
+        </div>
+      </div>
+      <div class="feat-cell">
+        <div>
+          <strong>ペット飼育可・専用足洗場</strong>
+          <p>1階に住居者専用のペット用足洗場を設置。大切な家族と安心して暮らせる環境。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- POSITION -->
+<div class="section-wrap dark">
+  <div class="section-inner">
+    <div class="sec-eyebrow">Position</div>
+    <h2 class="sec-h2">暮らす「ゆとり」</h2>
+    <p class="sec-lead">
+      JR南武線で川崎駅まで直通約3分。<br>
+      住居系地域の静けさと、都市の利便性を両立したロケーション。
+    </p>
+
+    <div class="ac-grid">
+      <div class="ac-cell">
+        <div class="ac-type">Nearest Station</div>
+        <div class="ac-station">JR南武線「矢向」駅</div>
+        <div class="ac-time">12<span>分 徒歩</span></div>
+        <div class="ac-note">川崎駅まで直通 約3分</div>
+      </div>
+      <div class="ac-cell">
+        <div class="ac-type">Bus Access</div>
+        <div class="ac-station">JR横須賀線「新川崎」駅</div>
+        <div class="ac-time">10<span>分 バス</span></div>
+        <div class="ac-note">武蔵小杉・品川・新橋方面へ</div>
+      </div>
+      <div class="ac-cell">
+        <div class="ac-type">Bus Access</div>
+        <div class="ac-station">JR東海道線・京浜東北線「川崎」駅</div>
+        <div class="ac-time">10<span>分 バス</span></div>
+        <div class="ac-note">品川・東京・横浜方面へ</div>
+      </div>
+      <div class="ac-cell">
+        <div class="ac-type">Public Facility</div>
+        <div class="ac-station">幸区役所</div>
+        <div class="ac-time">4<span>分 徒歩（約270m）</span></div>
+        <div class="ac-note">行政手続きも気軽に</div>
+      </div>
+    </div>
+
+    <table class="shop-tbl" style="margin-top:1px;">
+      <tr>
+        <td class="s-cat">Market</td>
+        <td class="s-name">ライフ川崎塚越店</td>
+        <td class="s-dist">徒歩3分（約180m）</td>
+      </tr>
+      <tr>
+        <td class="s-cat">School</td>
+        <td class="s-name">古川小学校・塚越中学校</td>
+        <td class="s-dist">徒歩10分圏内</td>
+      </tr>
+      <tr>
+        <td class="s-cat">Nursery</td>
+        <td class="s-name">古川保育園</td>
+        <td class="s-dist">徒歩2分</td>
+      </tr>
+      <tr>
+        <td class="s-cat">Library</td>
+        <td class="s-name">幸図書館</td>
+        <td class="s-dist">徒歩5分（約370m）</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- QUALITY -->
+<div class="section-wrap">
+  <div class="section-inner">
+    <div class="sec-eyebrow">Quality</div>
+    <h2 class="sec-h2">上質な「ゆとり」</h2>
+    <p class="sec-lead">
+      野村不動産「プラウド」ブランドの品質水準が、令和7年12月竣工の最新設備とともに日々の暮らしを丁寧に支える。
+    </p>
+
+    <div class="q-grid">
+      <div class="q-cell">
+        <div class="q-cell-hd">
+          <div class="q-icon">🍳</div>
+          <div class="q-title">プレミアムキッチン</div>
+        </div>
+        <div class="q-cell-body">
+          <p>天然石（御影石）カウンタートップ、ディスポーザ、食洗機、浄水機能付シャワー水栓を標準装備。ハイパーガラストップガスコンロで日々の料理をより快適に。</p>
+        </div>
+      </div>
+      <div class="q-cell">
+        <div class="q-cell-hd">
+          <div class="q-icon">🛁</div>
+          <div class="q-title">上質なバスルーム</div>
+        </div>
+        <div class="q-cell-body">
+          <p>魔法びん浴槽で4時間の保温。TES浴室暖房乾燥機でヒートショックを防止。カラリ床は翌朝には乾き、清潔な状態をキープ。</p>
+        </div>
+      </div>
+      <div class="q-cell">
+        <div class="q-cell-hd">
+          <div class="q-icon">🌡</div>
+          <div class="q-title">温水式床暖房</div>
+        </div>
+        <div class="q-cell-body">
+          <p>リビング・ダイニングに全戸標準装備のTES温水式床暖房。高効率「ecoジョーズ」熱源機（熱効率約95%）で省エネも両立。</p>
+        </div>
+      </div>
+      <div class="q-cell">
+        <div class="q-cell-hd">
+          <div class="q-icon">🔑</div>
+          <div class="q-title">ハンズフリー入室</div>
+        </div>
+        <div class="q-cell-body">
+          <p>電池錠「Tebraキー」対応。荷物で手がふさがっていてもかざすだけで解錠。Low-E複層ガラスで断熱・結露・紫外線も抑制。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-wrap">
+  <div class="c-rule"></div>
+  <h2>この邸宅を、あなたの「ゆとり」に。</h2>
+  <p>内見・ご質問はいつでもお気軽にお問い合わせください。</p>
+  <div class="cta-btns">
+    <a href="index.html" class="cta-a cta-primary">物件詳細・価格を見る</a>
+    <a href="index.html#contact" class="cta-a cta-gold">内見・問い合わせ</a>
+  </div>
+</div>
+
+<footer>
+  プラウド川崎矢向&nbsp;&nbsp;|&nbsp;&nbsp;神奈川県川崎市幸区古川町156-1<br>
+  <a href="mailto:kohei.noguchi@globalink.co.jp">kohei.noguchi@globalink.co.jp</a><br>
+  © 2026 プラウド川崎矢向
+</footer>
+
+</body>
+</html>
